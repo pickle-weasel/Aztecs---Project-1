@@ -226,10 +226,5 @@ unique_categories = unique_finder('State')
 # In[]
 
 # In[]
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Aug  8 20:06:03 2018
 
-@author: crich
-"""
 
