@@ -19,12 +19,16 @@ os.chdir('C:/Users/crich/Desktop/ucsd/chris/')
 
 saferparks = pd.read_csv('C:/Users/crich/OneDrive/UCSD/Aztecs/Aztecs---Project-1/saferparks_dataset.csv')
 
-# In[ DF BUILDER ]
-
-saferparks['Day'] =  [int(x.split('-')[0]) for x in saferparks.loc[:,'Date']]
+# In[ Post Clean DF ]
+saferparks["Year"] = saferparks["Date"].map(lambda x: x.split("-")[2])
+saferparks['Month'] =  [x.split('-')[1] for x in saferparks.loc[:,'Date']]
 saferparks['Week'] = [1+int(x)//7 for x in saferparks.loc[:,'Day']]
+saferparks['Day'] =  [int(x.split('-')[0]) for x in saferparks.loc[:,'Date']]
 
-# In[ DF BUILDER ]
+# In[  ]
+
+
+# In[ Clean Df ]
 
 
 saferparks['Device type'] = saferparks['Device type'].replace({
@@ -226,5 +230,10 @@ unique_categories = unique_finder('State')
 # In[]
 
 # In[]
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug  8 20:06:03 2018
 
+@author: crich
+"""
 
